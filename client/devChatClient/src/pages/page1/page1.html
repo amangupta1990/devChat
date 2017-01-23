@@ -11,18 +11,32 @@
   <h3>D3v Ch@t</h3>
 
   
-    <form (ngSubmit)="submit()">
+    <form (submit)="submit()" *ngIf="!showSignup">
+      <h2>Login</h2>
       <ion-item>
         <ion-label>Email</ion-label>
         <ion-input type="email" [(ngModel)]="login.email" name="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Password</ion-label>
-        <ion-textarea [(ngModel)]="login.password" name="password"></ion-textarea>
+        <ion-input type="password" [(ngModel)]="login.password" name="password"></ion-input>
       </ion-item>
-      <button ion-button type="submit" block>login</button><button ion-button type="submit" block>Signup</button>
+      <button ion-button type="submit" block>login</button><button ion-button type="button" (click)="toggleSignup()">Signup</button>
     </form>
-  
+    
+    <form (submit)="signup()" *ngIf="showSignup">
+      <h2>Signup</h2>
+      <ion-item>
+           <ion-label>Email</ion-label>
+          <ion-input type="email" [(ngModel)]="signupForm.email" name="email"></ion-input>
+      </ion-item>
+          <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="signupForm.password" name="password"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Signup</button>
+    </form>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+ 
 </ion-content>

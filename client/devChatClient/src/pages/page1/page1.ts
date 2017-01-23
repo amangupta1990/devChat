@@ -8,17 +8,32 @@ import { NavController } from 'ionic-angular';
   providers:[]
 })
 export class Page1 {
-
+  private signupForm:any ={};
+ private showSignup = false;
  private login:any = {};
   constructor(public navCtrl: NavController,private feathers: Feathers) {
     
   }
+
+toggleSignup(){
+  this.showSignup = true;
+}
+
+  signup(){
+  
+    
+
+    this.feathers.signup(this.signupForm).then(success=>{
+      
+      this.showSignup = false , error =>{ console.log(error);}
+    })
+  }
+
   submit(){
-    this.feathers.app.authenticate({
-  type: 'local',
-  'email': this.login.email,
-  'password': this.login.password
-}).then((result)=>{
+
+    this.feathers.login(this.login)
+
+ .then((result)=>{
   
    this.feathers.navigate('Page Two',null);
 

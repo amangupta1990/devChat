@@ -3,11 +3,42 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page Two</ion-title>
+    <ion-title>Profile</ion-title>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+   <ion-title>Profile Settings</ion-title>
+
+   <ion-card>
+  <ion-card-header>
+   Subjects
+  </ion-card-header>
+  <ion-card-content>
+      
+        <form (ngSubmit)="addNewSubject()"> 
+        <ion-item>
+        <ion-label floating>enter tags</ion-label>
+        <ion-input type="text" [(ngModel)]="newSubject" name="newSubject"></ion-input>
+        </ion-item>
+          <button ion-button type="submit" block (click)="addNewSubject">Add Todo</button>
+        </form>
+    
+
+<div *ngFor="let subject of profile.subjects; let i = index;" style="padding:2px;">
+  <span style="float:left;margin:2px;">
+   <ion-chip>
+  <ion-icon name="close-circle" (click)="removeSubject(i,1)"></ion-icon>
+  <ion-label>{{subject}}</ion-label>
+</ion-chip>
+</span>
+</div>
+  </ion-card-content>
+</ion-card>
+ <button ion-button  (click)="saveProfileSettings()">Save</button>
+
+  <!-- 
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-left></ion-icon>
@@ -19,5 +50,6 @@
   </ion-list>
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+   
+  </div> -->
 </ion-content>

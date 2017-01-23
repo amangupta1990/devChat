@@ -38,8 +38,7 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
 
-
-     this.feathers.app.authenticate().then(user =>{
+     this.feathers.authenticate().then(user =>{
        this.openPage(this.pages[1])
      },err=>{
        console.log(err);
