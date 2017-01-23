@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Page One</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>D3v Ch@t</h3>
+
+  
+    <form (ngSubmit)="submit()">
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="login.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-textarea [(ngModel)]="login.password" name="password"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>login</button><button ion-button type="submit" block>Signup</button>
+    </form>
+  
+
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+</ion-content>
