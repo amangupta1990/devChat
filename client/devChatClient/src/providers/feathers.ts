@@ -43,9 +43,10 @@ this.app = feathers()
 
     this.app.service('users').create(form).then(user=>{
       // store the user profile 
-      this.user = user.data;
+      this.user = user;
       // fetch the profile and save it as well;
       this.app.service('profiles').find({email:this.user.email}).then(profile=>{
+        debugger;
        this.profile=  profile.data.find(p =>{ return p.email == this.user.email}); resolve(true);},error=>{reject(error)})
 
     } , error =>{ reject(error)}
@@ -91,6 +92,15 @@ login(login){
       );
   })
 }
+ 
+ logout(){
+
+
+     this.app.logout();
+     this.navigate('Page One',null);
+
+
+ }
 
 updateProfile(data){
   return new Promise((resolve,reject)=>{

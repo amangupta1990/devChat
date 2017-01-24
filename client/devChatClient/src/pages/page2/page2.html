@@ -11,7 +11,7 @@
 <ion-content>
    <ion-title>Profile Settings</ion-title>
 
-   <ion-card>
+   <ion-card color="secondary">
   <ion-card-header>
    Subjects
   </ion-card-header>
@@ -27,16 +27,16 @@
     
 
 <div *ngFor="let subject of profile.subjects; let i = index;" style="padding:2px;">
-  <span style="float:left;margin:2px;">
+  <div style="float:left;margin:2px; display:inline-block">
    <ion-chip>
   <ion-icon name="close-circle" (click)="removeSubject(i,1)"></ion-icon>
   <ion-label>{{subject}}</ion-label>
 </ion-chip>
-</span>
+</div>
 </div>
   </ion-card-content>
 </ion-card>
- <button ion-button  (click)="saveProfileSettings()">Save</button>
+ <button ion-button round  (click)="saveProfileSettings()">Save</button>
 
   <!-- 
   <ion-list>
