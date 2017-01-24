@@ -8,6 +8,7 @@ import { NavController } from 'ionic-angular';
   providers:[]
 })
 export class Page1 {
+  private logo = '</Dev chaT>';
   private signupForm:any ={};
  private showSignup = false;
  private login:any = {};
@@ -35,7 +36,7 @@ toggleSignup(){
 
  .then((result)=>{
   
-   this.feathers.navigate('Page Two',null);
+   this.feathers.navigate('Home',null);
 
   console.log('Authenticated!', result);
   

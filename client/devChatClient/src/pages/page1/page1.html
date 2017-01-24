@@ -1,18 +1,11 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Page One</ion-title>
-  </ion-navbar>
-</ion-header>
+
 
 <ion-content padding>
-  <h3>D3v Ch@t</h3>
+   <h1 class="logo">{{logo}}</h1>
 
   
     <form (submit)="submit()" *ngIf="!showSignup">
-      <h2>Login</h2>
+     
       <ion-item>
         <ion-label>Email</ion-label>
         <ion-input type="email" [(ngModel)]="login.email" name="email"></ion-input>

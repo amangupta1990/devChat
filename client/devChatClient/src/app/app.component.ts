@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import {Feathers } from '../providers/feathers';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
+import { Home } from '../pages/home/home';
 
 
 @Component({
@@ -15,14 +16,14 @@ export class MyApp {
   rootPage: any = Page1;
 
   pages: Array<{title: string, component: any}>;
-
+  private isLoggedIn = false;
   constructor(public platform: Platform ,private feathers:Feathers) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Page One', component: Page1 },
-      { title: 'Page Two', component: Page2 }
+      { title: 'Home', component: Home }
     ];
 
     // check for navigation 
@@ -39,7 +40,8 @@ export class MyApp {
       Splashscreen.hide();
 
      this.feathers.authenticate().then(user =>{
-       this.openPage(this.pages[1])
+       this.openPage(this.pages[1]);
+       this.isLoggedIn= true;
      },err=>{
        console.log(err);
        this.openPage(this.pages[0]);

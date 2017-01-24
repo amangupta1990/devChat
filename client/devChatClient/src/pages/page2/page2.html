@@ -3,27 +3,25 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Profile</ion-title>
+    <ion-title>Edit Profile</ion-title>
 
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
    <ion-title>Profile Settings</ion-title>
 
-   <ion-card color="secondary">
-  <ion-card-header>
-   Subjects
-  </ion-card-header>
-  <ion-card-content>
-      
-        <form (ngSubmit)="addNewSubject()"> 
+
+   <form (ngSubmit)="addNewSubject()"> 
         <ion-item>
-        <ion-label floating>enter tags</ion-label>
+        <ion-label >Add a tag </ion-label>
         <ion-input type="text" [(ngModel)]="newSubject" name="newSubject"></ion-input>
         </ion-item>
           <button ion-button type="submit" block (click)="addNewSubject">Add Todo</button>
         </form>
+
+      
+       
     
 
 <div *ngFor="let subject of profile.subjects; let i = index;" style="padding:2px;">
@@ -34,8 +32,7 @@
 </ion-chip>
 </div>
 </div>
-  </ion-card-content>
-</ion-card>
+  
  <button ion-button round  (click)="saveProfileSettings()">Save</button>
 
   <!-- 

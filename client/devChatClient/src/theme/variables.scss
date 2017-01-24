@@ -28,8 +28,40 @@ $colors: (
   secondary:  #F49F0A,
   danger:     #f53d3d,
   light:      #DAEFC4,
-  dark:       #EFCA08
+  dark:       #EFCA08,
+  background-grey: #484545,
+  background-light-blue: rgba(27, 220, 220, 0.86)
 );
+
+.logo{text-align:center; font-weight:bold; color:white; text-shadow: 1px 1px 1px black; 
+font-size:60px;padding-top:30%;
+     animation: colorchange 8s infinite; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 8s infinite; /* Chrome and Safari */}
+.scroll-content {background: #484545}
+.chip{box-shadow: 1px 1px 2px;}
+.toolbar-background{background: #00A6A6!important; color:white;}
+form ion-item{margin:2px 0;}
+
+
+
+    @keyframes colorchange
+    {
+      0%   {color: #00A6A6;}
+      25%  {color: #F49F0A;}
+      50%  {color: #f53d3d;}
+      75%  {color: #DAEFC4;}
+      100% {color: rgba(27, 220, 220, 0.86);}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+     {
+      0%   {color: #00A6A6;}
+      25%  {color: #F49F0A;}
+      50%  {color: #f53d3d;}
+      75%  {color: #DAEFC4;}
+      100% {color: rgba(27, 220, 220, 0.86);}
+    }
 
 
 // App iOS Variables

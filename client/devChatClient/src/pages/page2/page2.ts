@@ -52,7 +52,7 @@ export class Page2 {
     let data = {subjects:this.profile.subjects};
     this.feathers.updateProfile(data).then(updatedProfile=>{
       this.profile = updatedProfile;
-      alert('success');
+      this.navCtrl.pop();
     },error=>{
       alert("error")
     })

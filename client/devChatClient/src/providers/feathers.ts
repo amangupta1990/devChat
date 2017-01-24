@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http , RequestOptions, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
-declare var io,feathers;
+declare var io,feathers,window;
 /*
   Generated class for the Feathers provider.
 
@@ -18,7 +18,7 @@ private host:string;
 public user:any;
 public profile:any;
   constructor(public http: Http) {
-    this.host = 'http://localhost:3030';
+    this.host = window.location.hostname+":3030";
     // Establish a Socket.io connection
  this.socket = io(this.host);
 // Initialize our Feathers client application through Socket.io
