@@ -17,10 +17,6 @@
   background: #484545;
 }
 
-.chip {
-  box-shadow: 1px 1px 2px;
-}
-
 .toolbar-background {
   background: #00A6A6 !important;
   color: white;
@@ -27138,4 +27134,20 @@ sub {
   .wp .modal-wrapper > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content {
     padding-top: calc(16px + 20px);
   }
+}
+
+ion-auto-complete {
+  display: block !important;
+  overflow: hidden !important;
+}
+
+ion-auto-complete ion-list {
+  margin: 8px !important;
+  margin-top: -8px !important;
+  border: 1px solid #dedede !important;
+}
+
+ion-auto-complete ion-item:hover {
+  background: #f1f1f1 !important;
+  cursor: pointer !important;
 }

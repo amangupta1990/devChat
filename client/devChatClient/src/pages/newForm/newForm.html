@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>New dicussion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Title</ion-label>
+    <ion-input type="text" placeholder="enter a short title"></ion-input>
+  </ion-item>
+    <br>
+   <ion-item>
+    <ion-label color="primary" stacked>Body</ion-label>
+  <ion-textarea fz-elastic placeholder="Enter a description"></ion-textarea>
+  </ion-item>
+
+ <br>
+ <ion-auto-complete (itemSelected)="addTopic();" [dataProvider]="autoComplete" #tagSearch style="position:absolute; width:96%; z-index:1"></ion-auto-complete>
+
+      
+       
+    
+<ion-item style="margin-top:60px;">
+<h4 style="text-align:center" *ngIf="topics.length == 0">Use the search bar to search for tags</h4>
+  <ul  *ngFor="let topic of topics; let i = index;">
+    <li style="float:left;margin:5px 5px; display:inline-block; margin-top:-15px;" >
+   <ion-chip>
+  <ion-icon name="close-circle" style="padding-left:8px;" (click)="removeTopic(i,1)"></ion-icon>
+  <ion-label>{{topic}}</ion-label>
+</ion-chip>
+</li>
+</ul>
+
+    </ion-item>
+<br><br>
+<div style="text-align:center; width:100%">
+ <button ion-button round>Post question</button>
+</div>
+</ion-content>
+
+

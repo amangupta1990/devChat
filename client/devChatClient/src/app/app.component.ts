@@ -3,7 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import {Feathers } from '../providers/feathers';
 import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
 import { Home } from '../pages/home/home';
 
 
@@ -12,7 +11,6 @@ import { Home } from '../pages/home/home';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  @ViewChild(Page1) loginPage: Page1;
   rootPage: any = Page1;
 
   pages: Array<{title: string, component: any}>;

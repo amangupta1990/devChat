@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Feathers } from '../../providers/feathers';
 import { NavController, NavParams } from 'ionic-angular';
 import {Page2 } from '../page2/page2';
+import {NewForm} from '../newForm/newForm';
 @Component({
   selector: 'home',
   templateUrl: 'home.html'
@@ -26,6 +27,10 @@ export class Home {
    
   }
  
-  
+  newDiscussion(){
+    this.navCtrl.push(NewForm).then(data=>{
+      
+    })
+  }
 
 }
