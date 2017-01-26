@@ -16,5 +16,50 @@
    <button ion-fab mini  (click)="newDiscussion()"><ion-icon name="add"></ion-icon></button>
  </ion-fab>
 
+ <div *ngFor="let discussion of discussions;">
+   <ion-card>
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img [src]="discussion.owner.gravatar">
+    </ion-avatar>
+    <h2>{{discussion.title}}</h2>
+    <p>{{discussion.createdAt | amCalendar}}</p>
+
+  </ion-item>
+
+ 
+
+  <ion-card-content>
+  
+        <div>
+      <ul  *ngFor="let topic of discussion.subjects; let i = index;">
+    <li style="float:left;margin:5px 5px; display:inline-block; margin-top:-15px;" >
+   <ion-chip>
+  <ion-label>{{topic}}</ion-label>
+</ion-chip>
+</li>
+</ul>
+</div>
+<br><br>
+  <p>{{discussion.body}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{discussion.participants.length}} participants</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+      {{lastUpdated | amTimeAgo}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+ </div>
 
 </ion-content>

@@ -9,6 +9,7 @@ import { Discussions } from '../pages/discussions/discussions';
 import {Feathers } from '../providers/feathers';
 import {AutoComplete } from '../providers/autocomplete';
 import {ElasticModule} from 'angular2-elastic';
+import {MomentModule} from 'angular2-moment';
  import { AUTOCOMPLETE_DIRECTIVES, AUTOCOMPLETE_PIPES } from 'ionic2-auto-complete'; 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {ElasticModule} from 'angular2-elastic';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    ElasticModule
+    ElasticModule,
+    MomentModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

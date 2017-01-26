@@ -14,23 +14,29 @@ export class Home {
    private user : any;
    private profile: any;
    private newSubject:string;
+   private discussions:any[];
+   
   items: Array<{title: string, note: string, icon: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private feathers:Feathers) {
     this.user = this.feathers.user;
     this.profile = this.feathers.profile;
-    if(this.profile.subjects.length == 1 )
+
+     // fetch discussions :
+     feathers.app.service('discussions').find().then(discussions=>{
+       this.discussions = discussions.data; 
+     });
+
+   /* if(this.profile.subjects.length == 1 )
     // prompt the user to update their profile settings;
      this.navCtrl.push(Page2, {
          
-    }).then(_=>{ this.profile = this.feathers.profile;});
+    }).then(_=>{ this.profile = this.feathers.profile;});*/
    
   }
  
   newDiscussion(){
-    this.navCtrl.push(NewForm).then(data=>{
-      
-    })
+    this.navCtrl.push(NewForm).then((newPost)=>{ })
   }
 
 }

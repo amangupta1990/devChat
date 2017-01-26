@@ -11,12 +11,12 @@
 
   <ion-item>
     <ion-label color="primary" stacked>Title</ion-label>
-    <ion-input type="text" placeholder="enter a short title"></ion-input>
+    <ion-input type="text" [(ngModel)]="title" placeholder="enter a short title"></ion-input>
   </ion-item>
     <br>
    <ion-item>
     <ion-label color="primary" stacked>Body</ion-label>
-  <ion-textarea fz-elastic placeholder="Enter a description"></ion-textarea>
+  <ion-textarea [(ngModel)]="body" fz-elastic placeholder="Enter a description"></ion-textarea>
   </ion-item>
 
  <br>
@@ -39,7 +39,7 @@
     </ion-item>
 <br><br>
 <div style="text-align:center; width:100%">
- <button ion-button round>Post question</button>
+ <button ion-button round (click)="submit()" [disabled]="validate()">Post question</button>
 </div>
 </ion-content>
 

@@ -1,4 +1,5 @@
 'use strict';
+const discussion = require('./discussion');
 const profile = require('./profile');
 const message = require('./message');
 const authentication = require('./authentication');
@@ -14,4 +15,5 @@ module.exports = function() {
   app.configure(user);
   app.configure(message);
   app.configure(profile);
+  app.configure(discussion);
 };

@@ -15,7 +15,9 @@ const profileSchema = new Schema({
   lastActive: { type: Date, 'default': Date.now  },
   isOnline: { type: Boolean, 'default': true  },
   createdAt: { type: Date, 'default': Date.now },
-  updatedAt: { type: Date, 'default': Date.now }
+  updatedAt: { type: Date, 'default': Date.now },
+  gravatar:{type:String},
+  picture:{type:String}
 });
 
 const profileModel = mongoose.model('profile', profileSchema);
